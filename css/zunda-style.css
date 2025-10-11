@@ -1,5 +1,5 @@
 html {
-  scroll-padding-top: 64px; 
+  scroll-padding-top: var(--header-height, 64px); /* JSが未対応の場合のフォールバック値 */
   scroll-behavior: smooth;
 }
 
