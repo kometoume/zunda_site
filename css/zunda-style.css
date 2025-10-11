@@ -1,35 +1,70 @@
-:root {
-  /* 見出しやタイトルに使用: 和風で上品なフォント */
-  --font-display: "Shippori Mincho", serif;
-  /* 本文に使用: 読みやすいゴシック体 */
-  --font-body: "Noto Sans JP", sans-serif;
+html {
+  scroll-padding-top: 64px; 
+  scroll-behavior: smooth;
 }
+
+:root {
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Noto Sans JP", sans-serif;
+
+  --zunda-light: #e0f2e0; /* 背景や枠に使用する非常に薄い緑 */
+  --zunda-accent: #a3c9a8; /* メインのずんだ色 (元 zunda-bg) */
+  --zunda-dark: #5c8b5b; /* 強調色 (元 zunda-text) */
+  --text-color: #333; /* 標準テキスト色 */
+}
+
+/* Tailwind CSSのカスタムプロパティを適用 */
+.zunda-bg {
+  background-color: var(--zunda-accent);
+}
+.bg-zunda-dark {
+  background-color: var(--zunda-dark);
+}
+.bg-zunda-light {
+  background-color: var(--zunda-light);
+}
+.text-zunda-dark {
+  color: var(--zunda-dark);
+}
+.text-zunda-accent {
+  color: var(--zunda-accent);
+}
+
+
+/* 全体的なスタイル調整 */
 body {
   font-family: var(--font-body);
-  color: #333; /* 文字色 */
-  background-image: url("../images/washi-pattern.png");
+  color: var(--text-color);
+  background-color: #f8f6f1; /* わずかにベージュがかった白 */
+  background-image: url("../images/washi-pattern.png"); 
 }
 /* 見出しに和風フォントを適用 */
 h1,
 h2,
-h3 {
+h3,
+.section-title-display {
   font-family: var(--font-display);
 }
-/* ずんだ色（薄緑）のテーマカラーを定義 */
-.zunda-bg {
-  background-color: #a3c9a8;
-} /* 背景色 */
-.zunda-text {
-  color: #5c8b5b;
-} /* 強調色 */
 
-/* 商品カードのホバーアニメーションのベース設定 */
-.product-card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+
+/* メインビジュアルのタイトルは特に装飾を強く */
+#main-visual h2 {
+    position: relative;
+    display: inline-block;
 }
-/* JSで追加されるクラス */
-.product-card.is-hovering {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* 強めの影 */
+#main-visual h2::before {
+    content: "ZUNDA MOCHI";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    font-size: 1rem;
+    color: var(--zunda-accent);
+    letter-spacing: 0.1em;
+    font-family: var(--font-body);
+}
+
+/* スムーズスクロール用の設定（JSがない場合も動作するように） */
+html {
+  scroll-behavior: smooth;
 }

@@ -1,45 +1,34 @@
-        document.addEventListener('DOMContentLoaded', () => {
-            const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+document.addEventListener('DOMContentLoaded', () => {
+    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+    // 1. ヘッダー要素を取得
+    const header = document.querySelector('header');
+    // ヘッダーの高さを取得。取得できない場合は0とする
+    const headerHeight = header ? header.offsetHeight : 0; 
 
-            smoothScrollLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault(); // デフォルトのアンカーリンクの動作をキャンセル
+    smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); 
 
-                    const targetId = this.getAttribute('href'); 
-                    const targetElement = document.querySelector(targetId);
+            const targetId = this.getAttribute('href'); 
+            const targetElement = document.querySelector(targetId);
 
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+            if (targetElement) {
+                // 2. スクロール先の要素の絶対位置を計算
+                // getBoundingClientRect().top: ビューポート上端からの距離
+                // window.scrollY: 現在のスクロール位置
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                
+                // 3. ヘッダーの高さ分を引いてオフセット位置を決定
+                const offsetPosition = elementPosition - headerHeight;
 
-            const productCards = document.querySelectorAll('.product-card');
-
-            productCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.classList.add('is-hovering');
-                });
-                card.addEventListener('focus', () => {
-                    card.classList.add('is-hovering');
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    card.classList.remove('is-hovering');
-                });
-                card.addEventListener('blur', () => {
-                    card.classList.remove('is-hovering');
+                // 4. window.scrollTo() を使ってオフセット位置へスクロール
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
 
-                card.addEventListener('touchstart', () => {
-                    card.classList.add('is-hovering');
-                });
-                card.addEventListener('touchend', () => {
-                    setTimeout(() => {
-                        card.classList.remove('is-hovering');
-                    }, 300);
-                });
-            });
+            }
         });
+    });
+
+});

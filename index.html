@@ -26,8 +26,10 @@
     <link rel="stylesheet" href="css/zunda-style.css" />
   </head>
   <body class="antialiased">
-    <header class="zunda-bg text-white p-4 shadow-md">
-      <div class="container mx-auto flex justify-between items-center">
+    <header class="bg-zunda-dark text-white p-4 shadow-md sticky top-0 z-20">
+      <div
+        class="container mx-auto flex justify-between items-center max-w-6xl"
+      >
         <h1
           class="text-3xl font-extrabold tracking-wider"
           style="font-family: var(--font-display)"
@@ -37,17 +39,23 @@
         <nav>
           <ul class="flex space-x-6">
             <li>
-              <a href="#products" class="hover:underline text-lg smooth-scroll"
-                >商品一覧</a
+              <a
+                href="#main-visual"
+                class="hover:text-zunda-accent text-lg smooth-scroll font-bold text-white hover:text-zunda-light"
+                >トップ</a
               >
             </li>
             <li>
-              <a href="#about" class="hover:underline text-lg smooth-scroll"
+              <a
+                href="#about"
+                class="hover:text-zunda-accent text-lg smooth-scroll font-bold text-white hover:text-zunda-light"
                 >ずんだとは</a
               >
             </li>
             <li>
-              <a href="#access" class="hover:underline text-lg smooth-scroll"
+              <a
+                href="#access"
+                class="hover:text-zunda-accent text-lg smooth-scroll font-bold text-white hover:text-zunda-light"
                 >店舗情報</a
               >
             </li>
@@ -56,102 +64,141 @@
       </div>
     </header>
 
-    <main class="container mx-auto mt-12 p-4">
-      <section class="text-center mb-16">
-        <h2 class="text-5xl font-bold mb-4 zunda-text">
-          仙台伝統の味を、心を込めて。
-        </h2>
-        <p class="text-xl max-w-3xl mx-auto">
-          厳選された枝豆を丁寧にすり潰し、もち米と合わせる。素朴でありながら奥深い、格別な味わいをお届けします。
-        </p>
-      </section>
-
-      <div id="products" class="flex flex-wrap justify-center gap-8 pt-4">
+    <main class="mt-0 p-0">
+      <section
+        id="main-visual"
+        class="relative w-full min-h-screen flex flex-col-reverse md:flex-row items-stretch mt-[-16]"
+      >
         <div
-          class="w-full sm:w-80 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 product-card"
+          class="w-full md:w-1/3 bg-stone-100 flex items-center justify-center p-8 md:p-12 z-10"
         >
+          <div
+            class="text-zunda-dark text-center md:text-left max-w-sm mx-auto"
+          >
+            <h2
+              class="text-4xl md:text-5xl font-extrabold mb-4 section-title-display"
+            >
+              仙台伝統の味を、<br />心を込めて。
+            </h2>
+            <p class="text-lg md:text-xl mb-6 text-gray-700">
+              厳選された枝豆を丁寧にすり潰し、もち米と合わせる。素朴でありながら奥深い、格別な味わいをお届けします。ずんだ餅本舗は、この伝統の味を守り、現代に伝えることを使命としています。
+            </p>
+            <a
+              href="#about"
+              class="inline-block bg-zunda-dark text-white px-8 py-3 rounded-full hover:bg-zunda-accent transition duration-300 shadow-md font-bold tracking-wider"
+              >ずんだの魅力を知る</a
+            >
+          </div>
+        </div>
+
+        <div class="w-full md:w-2/3 relative h-96 md:h-auto">
           <img
             src="images/zunda_mochi.png"
-            alt="定番ずんだ餅の画像"
-            class="w-full h-40 object-cover mb-4 rounded-lg"
+            alt="ずんだ餅のメイン画像"
+            class="w-full h-full object-cover"
           />
-          <h3
-            class="text-2xl font-semibold mb-2"
-            style="font-family: var(--font-display)"
-          >
-            定番ずんだ餅
-          </h3>
-          <p class="text-gray-600 mb-4">
-            粒が残る食感が特徴の、当店一番人気の商品です。
-          </p>
-          <a
-            href="#"
-            class="inline-block zunda-bg text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300"
-            >詳細を見る</a
-          >
         </div>
-        <div
-          class="w-full sm:w-80 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 product-card"
-        >
-          <img
-            src="images/zunda_ice.png"
-            alt="ずんだアイスの画像"
-            class="w-full h-40 object-cover mb-4 rounded-lg"
-          />
-          <h3
-            class="text-2xl font-semibold mb-2"
-            style="font-family: var(--font-display)"
-          >
-            ずんだアイス
-          </h3>
-          <p class="text-gray-600 mb-4">
-            夏にぴったりの、枝豆の風味豊かな冷たいデザート。
-          </p>
-          <a
-            href="#"
-            class="inline-block zunda-bg text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300"
-            >詳細を見る</a
-          >
-        </div>
+      </section>
+
+      <div class="container mx-auto max-w-6xl p-4">
+        <section id="about" class="mt-16 p-8 bg-white rounded-lg">
+          <div class="section-header align-center pattern center-align mb-12">
+            <h2
+class="text-4xl font-bold mb-2 text-zunda-accent section-title-display relative inline-block border-b-4 border-zunda-accent pb-1"            >
+              🌱 ずんだとは？
+            </h2>
+            <span class="block text-xl text-gray-600 mt-2"
+              >東北に伝わる、生命力あふれる緑の餡</span
+            >
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-8 items-center">
+            <div class="md:w-1/2">
+              <img
+                src="images/edamame_raw.png"
+                alt="枝豆の画像"
+                class="w-full h-64 object-cover rounded-xl shadow-lg border-4 border-zunda-light"
+              />
+            </div>
+            <div class="md:w-1/2">
+              <p class="text-lg leading-relaxed text-gray-700">
+                <strong class="text-zunda-dark">「ずんだ」</strong
+                >は、主に東北地方、特に仙台を擁する宮城県で古くから愛されてきた伝統的な食材です。茹でて皮を剥いた<strong
+                  class="text-zunda-dark"
+                  >枝豆（未成熟な大豆）</strong
+                >を丁寧にすりつぶし、砂糖などを加えて作る餡のことを指します。
+              </p>
+              <p class="text-lg leading-relaxed mt-4 text-gray-700">
+                その鮮やかな緑色と、枝豆特有の豊かな<strong
+                  class="text-zunda-dark"
+                  >風味と粒感</strong
+                >が特徴で、お餅に絡めた「ずんだ餅」として食されるのが最も一般的です。また、夏の旬の時期に味わう、昔ながらの贅沢な味覚として親しまれています。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="access" class="mt-8 p-8 bg-white rounded-lg">
+          <div class="section-header align-center pattern center-align mb-12">
+            <h2
+class="text-4xl font-bold mb-2 text-zunda-accent section-title-display relative inline-block border-b-4 border-zunda-accent pb-1"            >
+              📍 店舗情報
+            </h2>
+            <span class="block text-xl text-gray-600 mt-2"
+              >皆様のご来店を心よりお待ちしております</span
+            >
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/2">
+              <p class="text-lg mb-6 text-gray-700">
+                JR仙台駅より徒歩5分。旅の疲れを癒す、和の空間でずんだ餅をご賞味ください。お土産も豊富にご用意しております。
+              </p>
+
+              <ul
+                class="space-y-3 text-lg text-gray-700 bg-zunda-light p-6 rounded-lg"
+              >
+                <li>
+                  <strong class="text-zunda-dark">住所:</strong>
+                  宮城県仙台市青葉区中央1丁目1-1 (仙台駅付近を想定)
+                </li>
+                <li>
+                  <strong class="text-zunda-dark">アクセス:</strong>
+                  JR仙台駅 西口より 徒歩5分
+                </li>
+                <li>
+                  <strong class="text-zunda-dark">営業時間:</strong>
+                  10:00 〜 19:00 (年中無休)
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="md:w-1/2 h-80 md:h-auto rounded-lg overflow-hidden shadow-xl"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.84138022497!2d140.87983302646762!3d38.25998472186711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a28180c510b87%3A0xb2a30b91be1ffdbc!2z5LuZ5Y-w6aeF!5e0!3m2!1sja!2sus!4v1760170794732!5m2!1sja!2sus"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </section>
       </div>
-
-      <section id="about" class="mt-20 p-8  bg-white rounded-lg">
-        <h2 class="text-4xl font-bold mb-4 zunda-text">🌱 ずんだとは？</h2>
-        <p>
-          東北地方で愛される、茹でた枝豆（またはそら豆）をすりつぶして作る餡のこと。お餅やスイーツにかけて食されます。
-        </p>
-      </section>
-      <section id="access" class="mt-8 p-8 bg-white rounded-lg">
-        <div class="flex flex-col md:flex-row gap-8">
-          <div class="md:w-1/2">
-            <h2 class="text-4xl font-bold mb-4 zunda-text">📍 店舗情報</h2>
-            <p class="text-lg mb-4">
-              JR仙台駅より徒歩5分。皆さまのお越しをお待ちしております。
-            </p>
-
-            <p class="text-gray-700">
-              <strong>住所:</strong> 宮城県仙台市青葉区中央1丁目1-1
-              (仙台駅付近を想定)
-            </p>
-            <p class="text-gray-700">
-              <strong>営業時間:</strong> 10:00 〜 19:00 (年中無休)
-            </p>
-          </div>
-
-          <div class="md:w-1/2 h-80 md:h-auto">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.84138022497!2d140.87983302646762!3d38.25998472186711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a28180c510b87%3A0xb2a30b91be1ffdbc!2z5LuZ5Y-w6aeF!5e0!3m2!1sja!2sus!4v1760170794732!5m2!1sja!2sus"
-              width="100%"
-              height="100%"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </section>
     </main>
+
+    <footer class="bg-zunda-dark text-white mt-12 p-8">
+      <div class="container mx-auto text-center max-w-6xl">
+        <p class="text-xl mb-2" style="font-family: var(--font-display)">
+          ずんだ餅本舗
+        </p>
+        <p class="text-sm">© 2025 Zunda Mochi Project. All Rights Reserved.</p>
+      </div>
+    </footer>
 
     <script src="js/script.js"></script>
   </body>
