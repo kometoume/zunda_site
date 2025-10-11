@@ -9,7 +9,7 @@ body {
     font-family: var(--font-body);
     background-color: #f7f7f7; 
     color: #333; /* 文字色 */
-    background-image: url('/images/washi-pattern.jpg');
+    background-image: url('/images/washi-pattern.jpg')!important;
 }
 /* 見出しに和風フォントを適用 */
 h1, h2, h3 {
