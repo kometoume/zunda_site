@@ -1,7 +1,3 @@
-html {
-  scroll-padding-top: var(--header-height, 64px); /* JSが未対応の場合のフォールバック値 */
-  scroll-behavior: smooth;
-}
 
 :root {
   --font-display: "Shippori Mincho", serif;
@@ -52,11 +48,12 @@ h3,
 #main-visual h2 {
     position: relative;
     display: inline-block;
+    
 }
 #main-visual h2::before {
     content: "ZUNDA MOCHI";
     position: absolute;
-    top: -25px;
+    top: -32px;
     left: 0;
     font-size: 1rem;
     color: var(--zunda-accent);
