@@ -6,10 +6,10 @@
     --font-body: 'Noto Sans JP', sans-serif;
 }
 body {
-    /* 基本のフォントと背景色 */
     font-family: var(--font-body);
-    background-color: #f7f7f7; /* 薄い背景色 */
+    background-color: #f7f7f7;
     color: #333; /* 文字色 */
+    background-image: url('/images/washi-pattern.jpg');
 }
 /* 見出しに和風フォントを適用 */
 h1, h2, h3 {
