@@ -7,7 +7,6 @@
 }
 body {
     font-family: var(--font-body);
-    background-color: #f7f7f7; 
     color: #333; /* 文字色 */
     background-image: url('/images/washi-pattern.png'); 
 }
