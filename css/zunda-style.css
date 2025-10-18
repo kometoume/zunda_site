@@ -32,6 +32,17 @@
   color: var(--zunda-accent);
 }
 
+.border-zunda-light {
+  border-color: var(--zunda-light);
+}
+
+.border-zunda-accent {
+  border-color: var(--zunda-accent);
+}
+
+.border-zunda-dark {
+  border-color: var(--zunda-dark);
+}
 /* =========================================
    全体のベーススタイル
 ========================================= */
