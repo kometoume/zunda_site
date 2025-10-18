@@ -1,67 +1,80 @@
-
 :root {
-  --font-display: "Shippori Mincho", serif;
-  --font-body: "Noto Sans JP", sans-serif;
+  /* 游明朝 (YuMincho) に変更 */
+  --font-display: "YuMincho", "游明朝", serif; /* 見出し用 - ウェイト500想定 */
+  --font-body: "YuMincho", "游明朝", serif; /* 本文用 - ウェイト400想定 */
 
   --zunda-light: #e0f2e0; /* 背景や枠に使用する非常に薄い緑 */
   --zunda-accent: #a3c9a8; /* メインのずんだ色 (元 zunda-bg) */
   --zunda-dark: #5c8b5b; /* 強調色 (元 zunda-text) */
-  --text-color: #333; /* 標準テキスト色 */
+  --text-color: #333; /* 標準テキスト色 (rgb(51, 51, 51)) */
 }
 
-/* Tailwind CSSのカスタムプロパティを適用 */
+/* =========================================
+   Tailwind カスタムユーティリティ
+========================================= */
 .zunda-bg {
   background-color: var(--zunda-accent);
 }
+
 .bg-zunda-dark {
   background-color: var(--zunda-dark);
 }
+
 .bg-zunda-light {
   background-color: var(--zunda-light);
 }
+
 .text-zunda-dark {
   color: var(--zunda-dark);
 }
+
 .text-zunda-accent {
   color: var(--zunda-accent);
 }
 
-
-/* 全体的なスタイル調整 */
+/* =========================================
+   全体のベーススタイル
+========================================= */
 body {
   font-family: var(--font-body);
   color: var(--text-color);
   background-color: #f8f6f1; /* わずかにベージュがかった白 */
-  background-image: url("../images/washi-pattern.png"); 
+  background-image: url("../images/washi-pattern.png");
+  font-weight: 400; /* 游明朝-400の指定に合わせる */
 }
+
 /* 見出しに和風フォントを適用 */
 h1,
 h2,
 h3,
 .section-title-display {
   font-family: var(--font-display);
+  font-weight: 500; /* 游明朝-500の指定に合わせる */
 }
 
-
-
-/* メインビジュアルのタイトルは特に装飾を強く */
+/* =========================================
+   メインビジュアル
+========================================= */
 #main-visual h2 {
-    position: relative;
-    display: inline-block;
-    
-}
-#main-visual h2::before {
-    content: "ZUNDA MOCHI";
-    position: absolute;
-    top: -32px;
-    left: 0;
-    font-size: 1rem;
-    color: var(--zunda-accent);
-    letter-spacing: 0.1em;
-    font-family: var(--font-body);
+  position: relative;
+  display: inline-block;
 }
 
-/* スムーズスクロール用の設定（JSがない場合も動作するように） */
+#main-visual h2::before {
+  content: "ZUNDA MOCHI";
+  position: absolute;
+  top: -32px;
+  left: 0;
+  font-size: 1rem;
+  color: var(--zunda-accent);
+  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  font-weight: 400; /* 本文のウェイトに合わせる */
+}
+
+/* =========================================
+   スクロール挙動
+========================================= */
 html {
   scroll-behavior: smooth;
 }
